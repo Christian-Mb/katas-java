@@ -18,7 +18,7 @@ public class StringHashCollisionGeneratorTest {
         stringHashCollisionGenerator = new StringHashCollisionGenerator(3);
         generatedList.addAll(stringHashCollisionGenerator.getGeneratedList());
         for (String word : generatedList) {
-            System.out.println(word.hashCode());
+            System.out.println(word);
         }
     }
 
