@@ -40,7 +40,7 @@ public class StringHashCollisionGenerator implements SameHashCode {
     private String buildString() {
         StringBuilder sb = new StringBuilder();
         Random rand = new Random();
-        IntStream.of(0, 5).forEach(value -> sb.append(BASE[rand.nextInt(BASE.length)]));
+        IntStream.range(0, 5).forEach(value -> sb.append(BASE[rand.nextInt(BASE.length)]));
         return sb.toString();
     }
 
