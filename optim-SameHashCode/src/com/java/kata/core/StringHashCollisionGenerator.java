@@ -18,7 +18,7 @@ public class StringHashCollisionGenerator implements SameHashCode {
     }
 
     /**
-     * Generate a lisf of Strinf with the same hashcode
+     * Generate a list of String with the same hashcode
      *
      * @return List of String without any duplication
      */
