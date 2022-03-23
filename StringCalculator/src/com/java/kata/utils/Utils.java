@@ -1,7 +1,7 @@
-package utils;
+package com.java.kata.utils;
 
-import exception.IncorrectValueException;
-import log.ValueErrorType;
+import com.java.kata.exception.IncorrectValueException;
+import com.java.kata.log.ValueErrorType;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -128,7 +128,8 @@ public final class Utils {
      */
     public static int handleException(String value) {
         int val = Integer.parseInt(value);
-        if (val < 0) throw new IncorrectValueException("Value can't be negative", ValueErrorType.NEGATIVE_VALUE);
+        if (val < 0)
+            throw new IncorrectValueException("Value can't be negative : ", val, ValueErrorType.NEGATIVE_VALUE);
         return val;
     }
 

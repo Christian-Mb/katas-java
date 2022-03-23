@@ -1,10 +1,10 @@
-package test;
+package com.java.kata;
 
-import core.StringCalculator;
-import exception.IncorrectValueException;
+import com.java.kata.core.StringCalculator;
+import com.java.kata.exception.IncorrectValueException;
+import com.java.kata.utils.Utils;
 import org.junit.Assert;
 import org.junit.Test;
-import utils.Utils;
 
 public class StringCalculatorTest {
 
@@ -24,6 +24,7 @@ public class StringCalculatorTest {
         Assert.assertEquals("Should be 10", 10, StringCalculator.add("1,3,6"));
     }
 
+    @Test
     public void shouldSumOneTwoThreeAndFour() {
         Assert.assertEquals("Should be 10", 10, StringCalculator.add("1,2,3,4"));
     }
@@ -55,11 +56,11 @@ public class StringCalculatorTest {
 
     @Test
     public void shouldHandleNegativeValue() {
-        Assert.assertThrows("Value can't be negative", IncorrectValueException.class, () -> StringCalculator.add("//;\n1\n1;-2\n3"));
+        Assert.assertEquals(-2, Assert.assertThrows("Value can't be negative", IncorrectValueException.class, () -> StringCalculator.add("//;\n1\n1;-2\n3")).getNumber());
     }
 
     @Test
     public void shouldHandleNegativeValue2() {
-        Assert.assertThrows("Value can't be negative", IncorrectValueException.class, () -> StringCalculator.add("-1,2"));
+        Assert.assertEquals(-1, Assert.assertThrows("Value can't be negative", IncorrectValueException.class, () -> StringCalculator.add("-1,2")).getNumber());
     }
 }

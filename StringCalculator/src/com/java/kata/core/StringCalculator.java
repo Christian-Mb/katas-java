@@ -1,6 +1,6 @@
-package core;
+package com.java.kata.core;
 
-import utils.Utils;
+import com.java.kata.utils.Utils;
 
 public final class StringCalculator {
 
