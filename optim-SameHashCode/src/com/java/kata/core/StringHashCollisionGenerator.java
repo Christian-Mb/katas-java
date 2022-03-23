@@ -3,6 +3,7 @@ package com.java.kata.core;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StringHashCollisionGenerator implements SameHashCode {
@@ -39,9 +40,7 @@ public class StringHashCollisionGenerator implements SameHashCode {
     private String buildString() {
         StringBuilder sb = new StringBuilder();
         Random rand = new Random();
-        for (int i = 0; i < 5; i++) {
-            sb.append(BASE[rand.nextInt(BASE.length)]);
-        }
+        IntStream.of(0, 5).forEach(value -> sb.append(BASE[rand.nextInt(BASE.length)]));
         return sb.toString();
     }
 
